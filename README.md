@@ -18,26 +18,13 @@
 
 ## 学习路线图
 
-```
-01_llm_basics/          ← 从这里开始
-    01_transformer_arch         Transformer 架构全面解析
-    02_tokenization             分词与词嵌入
-    03_prompting                Prompt Engineering 完全指南
-    04_rag_intro                RAG 检索增强生成
-
-02_agents_frameworks/   ← 进阶：主流框架实践（规划中）
-    01_langchain_basics         LangChain 链式调用
-    02_llama_index_rag          LlamaIndex 知识库
-    03_autogen_multiagent       AutoGen 多智能体
-    04_claude_agent_sdk         Claude Agent SDK
-
-03_projects/            ← 完整项目（规划中）
-    rag_chatbot/                RAG 问答机器人
-    multi_agent_workflow/       多 Agent 工作流
-
-04_papers_resources/    ← 论文与学习资源
-    key_papers.md               精读论文笔记
-    resources.md                推荐课程、工具、博客
+```mermaid
+flowchart LR
+    A["01 · LLM 基础\n────────────\nTransformer 架构\n分词与词嵌入\nPrompt Engineering\nRAG 检索增强生成"]
+    B["02 · Agents 框架\n────────────\nLangChain / LlamaIndex\nAutoGen / Claude SDK\n（规划中）"]
+    C["03 · 完整项目\n────────────\nRAG 问答机器人\n多 Agent 工作流\n（规划中）"]
+    D["04 · 论文资源\n────────────\n精读论文笔记\n推荐课程与工具"]
+    A --> B --> C --> D
 ```
 
 ---
