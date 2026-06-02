@@ -21,8 +21,8 @@
 ```mermaid
 flowchart LR
     A["01 · LLM 基础\n────────────\nTransformer 架构\n分词与词嵌入\nPrompt Engineering\nRAG 检索增强生成"]
-    B["02 · Agents 框架\n────────────\nLangChain / LlamaIndex\nAutoGen / Claude SDK\n（规划中）"]
-    C["03 · 完整项目\n────────────\nRAG 问答机器人\n多 Agent 工作流\n（规划中）"]
+    B["02 · Agents 框架\n────────────\nLangChain / LlamaIndex\nAutoGen / Claude SDK"]
+    C["03 · 完整项目\n────────────\nRAG 问答机器人\n多 Agent 工作流"]
     D["04 · 论文资源\n────────────\n精读论文笔记\n推荐课程与工具"]
     A --> B --> C --> D
 ```
@@ -148,22 +148,29 @@ jupyter lab
 | 02_tokenization | `tiktoken` | ❌ 不需要 |
 | 03_prompting | `anthropic`, `python-dotenv` | ✅ ANTHROPIC_API_KEY |
 | 04_rag_intro | `sentence-transformers`, `chromadb`, `anthropic` | ⚠️ 生成部分需要 |
+| 02_llama_index_rag | `llama-index`, `llama-index-embeddings-huggingface` | ✅ ANTHROPIC_API_KEY |
+| 03_autogen_multiagent | `pyautogen` | ✅ ANTHROPIC_API_KEY |
+| 04_claude_agent_sdk | `anthropic` | ✅ ANTHROPIC_API_KEY |
+| rag_chatbot | `chromadb`, `sentence-transformers`, `PyMuPDF` | ✅ ANTHROPIC_API_KEY |
+| multi_agent_workflow | `anthropic` | ✅ ANTHROPIC_API_KEY |
 
 ---
 
-## 规划中的内容
+## 02_agents_frameworks 内容
 
-### 02 · Agents 框架实践
+| Notebook | 内容 |
+|----------|------|
+| [01_langchain_basics.ipynb](02_agents_frameworks/01_langchain_basics.ipynb) | LangChain 核心：Chain、LCEL、Agent、Tool、RAG pipeline |
+| [02_llama_index_rag.ipynb](02_agents_frameworks/02_llama_index_rag.ipynb) | LlamaIndex：文档加载、VectorStoreIndex、子问题查询 |
+| [03_autogen_multiagent.ipynb](02_agents_frameworks/03_autogen_multiagent.ipynb) | AutoGen：多 Agent 协作、GroupChat、工具集成 |
+| [04_claude_agent_sdk.ipynb](02_agents_frameworks/04_claude_agent_sdk.ipynb) | Claude SDK：原生工具调用、Agent Loop、流式输出 |
 
-- **LangChain**：Chain、Agent、Tool、Memory 核心概念，RAG pipeline 搭建
-- **LlamaIndex**：文档索引、Query Engine、多文档问答
-- **AutoGen**：多 Agent 协作框架，角色分工与任务分解
-- **Claude Agent SDK**：工具调用、长对话管理、流式输出
+## 03_projects 内容
 
-### 03 · 完整项目
-
-- **RAG 问答机器人**：支持 PDF/Word 上传，多轮对话，引用来源
-- **多 Agent 工作流**：研究员 + 编写者 + 审稿者协作，自动生成报告
+| 项目 | 说明 |
+|------|------|
+| [rag_chatbot/](03_projects/rag_chatbot/) | CLI RAG 机器人，支持 PDF/TXT，多轮对话，引用来源 |
+| [multi_agent_workflow/](03_projects/multi_agent_workflow/) | 研究员 + 编写者 + 审稿者协作，自动生成 Markdown 报告 |
 
 ---
 
