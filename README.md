@@ -105,6 +105,22 @@ flowchart LR
 
 ---
 
+---
+
+### 📘 05 · LLM 推理工程：让模型更快更省
+
+从内存带宽瓶颈出发，系统讲解生产环境推理优化的核心技术栈。
+
+**覆盖内容：**
+- **为什么推理是内存带宽受限问题**：Roofline 模型，训练 vs 推理的本质差异
+- **KV Cache**：消除自回归重复计算，时序图对比，实测节省计算量
+- **Flash Attention**：IO 感知 Tiling 设计，HBM vs SRAM，PyTorch SDPA 速度对比
+- **量化（INT8/INT4）**：对称量化原理，误差分布可视化，各精度显存需求对比
+- **投机采样（Speculative Decoding）**：草稿模型 + 目标模型并行验证，加速比理论分析
+- **连续批处理**：PagedAttention 原理，静态 vs 连续批处理 GPU 利用率对比
+
+---
+
 ## 快速开始
 
 ### 环境配置
@@ -151,6 +167,8 @@ jupyter lab
 | 02_llama_index_rag | `llama-index`, `llama-index-embeddings-huggingface` | ✅ ANTHROPIC_API_KEY |
 | 03_autogen_multiagent | `pyautogen` | ✅ ANTHROPIC_API_KEY |
 | 04_claude_agent_sdk | `anthropic` | ✅ ANTHROPIC_API_KEY |
+| 05_llm_engineering | `torch`, `transformers` | ❌ 不需要 |
+| 05_finetuning_lora | `transformers`, `peft`, `datasets` | ❌ 不需要 |
 | rag_chatbot | `chromadb`, `sentence-transformers`, `PyMuPDF` | ✅ ANTHROPIC_API_KEY |
 | multi_agent_workflow | `anthropic` | ✅ ANTHROPIC_API_KEY |
 
@@ -164,6 +182,7 @@ jupyter lab
 | [02_llama_index_rag.ipynb](02_agents_frameworks/02_llama_index_rag.ipynb) | LlamaIndex：文档加载、VectorStoreIndex、子问题查询 |
 | [03_autogen_multiagent.ipynb](02_agents_frameworks/03_autogen_multiagent.ipynb) | AutoGen：多 Agent 协作、GroupChat、工具集成 |
 | [04_claude_agent_sdk.ipynb](02_agents_frameworks/04_claude_agent_sdk.ipynb) | Claude SDK：原生工具调用、Agent Loop、流式输出 |
+| [05_finetuning_lora.ipynb](02_agents_frameworks/05_finetuning_lora.ipynb) | 微调与 LoRA：PEFT、低秩分解原理、QLoRA、指令数据集 |
 
 ## 03_projects 内容
 
